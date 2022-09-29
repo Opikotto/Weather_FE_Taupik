@@ -19,7 +19,7 @@ function App() {
             setLat(position.coords.latitude);
             setLong(position.coords.longitude);
            
-             const cuacaSekarang = fetch(`${CUACA_API}/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${KEY_API}&units=metric`)
+             const cuacaSekarang = fetch(`${CUACA_API}/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${KEY_API}&exclude=hourly,daily&units=metric`)
            //  const forecastFetch = fetch(`${CUACA_API}/forecast?lat=${lat}&lon=${long}&appid=${KEY_API}&units=metric`)
   
             Promise.all([cuacaSekarang]).then(async (res)=> {
